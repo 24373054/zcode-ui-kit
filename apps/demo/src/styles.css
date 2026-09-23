@@ -6,4 +6,5 @@
 
 /* Scan kit components + demo for Tailwind class generation */
 @source "../../../packages/core/src/**/*.{ts,tsx}";
+@source "../../../packages/ai-elements/src/**/*.{ts,tsx}";
 @source "./**/*.{ts,tsx}";

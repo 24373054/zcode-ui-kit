@@ -6,7 +6,7 @@
  */
 "use client";
 
-import { cn } from "../lib/utils.js";
+import { cn } from "@zcode-ui/core/utils";
 import type { MotionProps } from "motion/react";
 import { motion } from "motion/react";
 import type { ComponentType, CSSProperties, ElementType, JSX } from "react";

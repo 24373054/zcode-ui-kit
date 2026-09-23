@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Button } from "./button.js";
-import { ScrollArea, ScrollBar } from "./scroll-area.js";
-import { cn } from "../lib/utils.js";
+import { Button } from "@zcode-ui/core/button";
+import { ScrollArea, ScrollBar } from "@zcode-ui/core/scroll-area";
+import { cn } from "@zcode-ui/core/utils";
 import type { ComponentProps } from "react";
 import { useCallback } from "react";
 

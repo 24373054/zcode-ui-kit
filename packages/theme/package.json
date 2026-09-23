@@ -1,11 +1,16 @@
 {
   "name": "@zcode-ui/theme",
   "description": "Theme runtime for ZCode UI tokens: useTheme, applyTheme, resolveTheme",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "Apache-2.0",
+  "private": false,
   "type": "module",
   "sideEffects": false,
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src",
+    "LICENSE"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -18,9 +23,13 @@
     "./package.json": "./package.json",
     "./src/*": "./src/*"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --config ../../vitest.config.ts",
     "clean": "rm -rf dist"
   },
   "peerDependencies": {

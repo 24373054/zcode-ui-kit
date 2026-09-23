@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@zcode-ui/core": ["../core/src/index.ts"],
+      "@zcode-ui/core/utils": ["../core/src/lib/utils.ts"],
+      "@zcode-ui/core/*": ["../core/src/components/*"]
+    }
+  },
+  "include": ["src"]
+}

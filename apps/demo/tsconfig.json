@@ -16,7 +16,9 @@
       "@zcode-ui/core/utils": ["./../../packages/core/src/lib/utils.ts"],
       "@zcode-ui/core/*": ["./../../packages/core/src/components/*"],
       "@zcode-ui/theme": ["./../../packages/theme/src/index.ts"],
-      "@zcode-ui/tokens": ["./../../packages/tokens/src/index.ts"]
+      "@zcode-ui/tokens": ["./../../packages/tokens/src/index.ts"],
+      "@zcode-ui/ai-elements": ["./../../packages/ai-elements/src/index.ts"],
+      "@zcode-ui/ai-elements/*": ["./../../packages/ai-elements/src/*"]
     }
   },
   "include": ["src", "vite.config.ts"]

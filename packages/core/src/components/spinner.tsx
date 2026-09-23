@@ -3,7 +3,6 @@ import { cn } from "../lib/utils.js";
 import { LoaderIcon } from "lucide-react";
 
 export type SpinnerProps = React.ComponentProps<"svg"> & {
-  /** Accessible label. Default: "Loading" */
   label?: string;
 };
 

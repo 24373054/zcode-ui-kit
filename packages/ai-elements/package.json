@@ -1,0 +1,225 @@
+{
+  "name": "@zcode-ui/ai-elements",
+  "description": "Standalone AI UI elements (vercel/ai-elements via ZCode) for React 19 + Tailwind v4",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": false,
+  "type": "module",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "src",
+    "LICENSE"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./agent": {
+      "types": "./dist/agent.d.ts",
+      "import": "./dist/agent.js",
+      "default": "./dist/agent.js"
+    },
+    "./artifact": {
+      "types": "./dist/artifact.d.ts",
+      "import": "./dist/artifact.js",
+      "default": "./dist/artifact.js"
+    },
+    "./attachments": {
+      "types": "./dist/attachments.d.ts",
+      "import": "./dist/attachments.js",
+      "default": "./dist/attachments.js"
+    },
+    "./checkpoint": {
+      "types": "./dist/checkpoint.d.ts",
+      "import": "./dist/checkpoint.js",
+      "default": "./dist/checkpoint.js"
+    },
+    "./code-block": {
+      "types": "./dist/code-block.d.ts",
+      "import": "./dist/code-block.js",
+      "default": "./dist/code-block.js"
+    },
+    "./commit": {
+      "types": "./dist/commit.d.ts",
+      "import": "./dist/commit.js",
+      "default": "./dist/commit.js"
+    },
+    "./confirmation": {
+      "types": "./dist/confirmation.d.ts",
+      "import": "./dist/confirmation.js",
+      "default": "./dist/confirmation.js"
+    },
+    "./conversation": {
+      "types": "./dist/conversation.d.ts",
+      "import": "./dist/conversation.js",
+      "default": "./dist/conversation.js"
+    },
+    "./image": {
+      "types": "./dist/image.d.ts",
+      "import": "./dist/image.js",
+      "default": "./dist/image.js"
+    },
+    "./markdown-blockquote": {
+      "types": "./dist/markdown-blockquote.d.ts",
+      "import": "./dist/markdown-blockquote.js",
+      "default": "./dist/markdown-blockquote.js"
+    },
+    "./markdown-list": {
+      "types": "./dist/markdown-list.d.ts",
+      "import": "./dist/markdown-list.js",
+      "default": "./dist/markdown-list.js"
+    },
+    "./persona": {
+      "types": "./dist/persona.d.ts",
+      "import": "./dist/persona.js",
+      "default": "./dist/persona.js"
+    },
+    "./plan": {
+      "types": "./dist/plan.d.ts",
+      "import": "./dist/plan.js",
+      "default": "./dist/plan.js"
+    },
+    "./prompt-input": {
+      "types": "./dist/prompt-input.d.ts",
+      "import": "./dist/prompt-input.js",
+      "default": "./dist/prompt-input.js"
+    },
+    "./prompt-input-actions": {
+      "types": "./dist/prompt-input-actions.d.ts",
+      "import": "./dist/prompt-input-actions.js",
+      "default": "./dist/prompt-input-actions.js"
+    },
+    "./prompt-input-buttons": {
+      "types": "./dist/prompt-input-buttons.d.ts",
+      "import": "./dist/prompt-input-buttons.js",
+      "default": "./dist/prompt-input-buttons.js"
+    },
+    "./prompt-input-primitives": {
+      "types": "./dist/prompt-input-primitives.d.ts",
+      "import": "./dist/prompt-input-primitives.js",
+      "default": "./dist/prompt-input-primitives.js"
+    },
+    "./prompt-input-textarea": {
+      "types": "./dist/prompt-input-textarea.d.ts",
+      "import": "./dist/prompt-input-textarea.js",
+      "default": "./dist/prompt-input-textarea.js"
+    },
+    "./queue": {
+      "types": "./dist/queue.d.ts",
+      "import": "./dist/queue.js",
+      "default": "./dist/queue.js"
+    },
+    "./sandbox": {
+      "types": "./dist/sandbox.d.ts",
+      "import": "./dist/sandbox.js",
+      "default": "./dist/sandbox.js"
+    },
+    "./shimmer": {
+      "types": "./dist/shimmer.d.ts",
+      "import": "./dist/shimmer.js",
+      "default": "./dist/shimmer.js"
+    },
+    "./snippet": {
+      "types": "./dist/snippet.d.ts",
+      "import": "./dist/snippet.js",
+      "default": "./dist/snippet.js"
+    },
+    "./sources": {
+      "types": "./dist/sources.d.ts",
+      "import": "./dist/sources.js",
+      "default": "./dist/sources.js"
+    },
+    "./suggestion": {
+      "types": "./dist/suggestion.d.ts",
+      "import": "./dist/suggestion.js",
+      "default": "./dist/suggestion.js"
+    },
+    "./task": {
+      "types": "./dist/task.d.ts",
+      "import": "./dist/task.js",
+      "default": "./dist/task.js"
+    },
+    "./terminal": {
+      "types": "./dist/terminal.d.ts",
+      "import": "./dist/terminal.js",
+      "default": "./dist/terminal.js"
+    },
+    "./test-results": {
+      "types": "./dist/test-results.d.ts",
+      "import": "./dist/test-results.js",
+      "default": "./dist/test-results.js"
+    },
+    "./tool": {
+      "types": "./dist/tool.d.ts",
+      "import": "./dist/tool.js",
+      "default": "./dist/tool.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "@zcode-ui/core": "workspace:*",
+    "lucide-react": "^0.511.0"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "ai": "^5.0.0 || ^6.0.0",
+    "motion": "^12.0.0",
+    "shiki": "^3.0.0 || ^4.0.0",
+    "nanoid": "^5.0.0",
+    "use-stick-to-bottom": "^1.0.0",
+    "ansi-to-react": "^6.0.0",
+    "@rive-app/react-webgl2": "^4.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ai": {
+      "optional": true
+    },
+    "motion": {
+      "optional": true
+    },
+    "shiki": {
+      "optional": true
+    },
+    "nanoid": {
+      "optional": true
+    },
+    "use-stick-to-bottom": {
+      "optional": true
+    },
+    "ansi-to-react": {
+      "optional": true
+    },
+    "@rive-app/react-webgl2": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "ai": "^6.0.138",
+    "ansi-to-react": "^6.2.6",
+    "motion": "^12.38.0",
+    "nanoid": "^5.1.7",
+    "shiki": "^4.0.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.3",
+    "use-stick-to-bottom": "^1.1.3",
+    "@rive-app/react-webgl2": "^4.27.3"
+  }
+}

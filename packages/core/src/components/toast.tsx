@@ -2,7 +2,7 @@
  * 轻量 toast 提示
  *
  * 不引入第三方库，用 React portal 渲染到 body，3 秒自动消失。
- * 调用方式：`import { toast } from "@zcode-ui/core/toast"; toast("message");`
+ * 调用方式：`import { toast } from "@/components/ui/toast.js"; toast("message");`
  */
 import { createRoot } from "react-dom/client";
 import { useEffect, useState } from "react";

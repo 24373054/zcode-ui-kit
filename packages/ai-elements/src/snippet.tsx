@@ -12,8 +12,8 @@ import {
   InputGroupButton,
   InputGroupInput,
   InputGroupText,
-} from "./input-group.js";
-import { cn } from "../lib/utils.js";
+} from "@zcode-ui/core/input-group";
+import { cn } from "@zcode-ui/core/utils";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 import {

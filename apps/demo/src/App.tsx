@@ -1,5 +1,35 @@
 import { useMemo, useState } from "react";
 import { useTheme, type Theme } from "@zcode-ui/theme";
+import { Shimmer } from "@zcode-ui/ai-elements/shimmer";
+import {
+  Snippet,
+  SnippetAddon,
+  SnippetCopyButton,
+  SnippetInput,
+} from "@zcode-ui/ai-elements/snippet";
+import { Suggestion, Suggestions } from "@zcode-ui/ai-elements/suggestion";
+import {
+  Sources,
+  SourcesContent,
+  SourcesTrigger,
+  Source,
+} from "@zcode-ui/ai-elements/sources";
+import {
+  Confirmation,
+  ConfirmationRequest,
+  ConfirmationAccepted,
+  ConfirmationRejected,
+  ConfirmationActions,
+  ConfirmationAction,
+} from "@zcode-ui/ai-elements/confirmation";
+import {
+  CodeBlock,
+  CodeBlockActions,
+  CodeBlockCopyButton,
+  CodeBlockHeader,
+} from "@zcode-ui/ai-elements/code-block";
+import { Task, TaskTrigger, TaskContent, TaskItem } from "@zcode-ui/ai-elements/task";
+import { Tool, ToolHeader, ToolContent, ToolInput } from "@zcode-ui/ai-elements/tool";
 import {
   Accordion,
   AccordionContent,
@@ -94,15 +124,7 @@ import {
   SelectValue,
 } from "@zcode-ui/core/select";
 import { Separator } from "@zcode-ui/core/separator";
-import { Shimmer } from "@zcode-ui/core/shimmer";
-import {
-  Snippet,
-  SnippetAddon,
-  SnippetCopyButton,
-  SnippetInput,
-} from "@zcode-ui/core/snippet";
 import { Spinner } from "@zcode-ui/core/spinner";
-import { Suggestion, Suggestions } from "@zcode-ui/core/suggestion";
 import { Switch } from "@zcode-ui/core/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@zcode-ui/core/tabs";
 import { Textarea } from "@zcode-ui/core/textarea";
@@ -160,7 +182,7 @@ export default function App() {
             <div>
               <h1 className="text-ui-lg font-semibold tracking-tight">zcode-ui-kit</h1>
               <p className="text-ui-sm text-foreground-subtle">
-                Standalone extract · v0.2.0 · theme: <code>{theme}</code>
+                Formal 1.0.0 · theme: <code>{theme}</code>
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -511,12 +533,12 @@ export default function App() {
 
           <Card>
             <CardHeader>
-              <CardTitle>AI-elements (lightweight)</CardTitle>
+              <CardTitle>@zcode-ui/ai-elements</CardTitle>
               <CardDescription>
-                Shimmer / suggestion / snippet — optional peer <code>motion</code> for shimmer
+                1.0 highlights — shimmer / suggestion / snippet / sources / confirmation / code-block / task / tool
               </CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-col gap-4">
+            <CardContent className="flex flex-col gap-6">
               <Shimmer className="text-ui-lg font-medium">Generating response…</Shimmer>
               <Suggestions>
                 {suggestions.map((s) => (
@@ -527,12 +549,61 @@ export default function App() {
                   />
                 ))}
               </Suggestions>
-              <Snippet code="pnpm add @zcode-ui/core">
+              <Snippet code="pnpm add @zcode-ui/ai-elements">
                 <SnippetInput />
                 <SnippetAddon align="inline-end">
                   <SnippetCopyButton />
                 </SnippetAddon>
               </Snippet>
+              <Sources>
+                <SourcesTrigger count={2} />
+                <SourcesContent>
+                  <Source href="https://github.com/24373054/zcode-ui-kit" title="zcode-ui-kit" />
+                  <Source href="https://github.com/zai-org/ZCode" title="ZCode upstream" />
+                </SourcesContent>
+              </Sources>
+              <Confirmation
+                approval={{ id: "demo-approval" }}
+                state="approval-requested"
+              >
+                <ConfirmationRequest>
+                  Allow the agent to run <code>pnpm test</code>?
+                </ConfirmationRequest>
+                <ConfirmationActions>
+                  <ConfirmationAction
+                    variant="outline"
+                    onClick={() => toast("Rejected", { variant: "info" })}
+                  >
+                    Reject
+                  </ConfirmationAction>
+                  <ConfirmationAction
+                    variant="default"
+                    onClick={() => toast("Approved", { variant: "info" })}
+                  >
+                    Approve
+                  </ConfirmationAction>
+                </ConfirmationActions>
+              </Confirmation>
+              <CodeBlock code={'export const hello = "zcode-ui 1.0.0";'} language="typescript">
+                <CodeBlockHeader>
+                  <CodeBlockActions>
+                    <CodeBlockCopyButton />
+                  </CodeBlockActions>
+                </CodeBlockHeader>
+              </CodeBlock>
+              <Task defaultOpen>
+                <TaskTrigger title="Explore codebase" />
+                <TaskContent>
+                  <TaskItem>Scan packages/ui for standalone extracts</TaskItem>
+                  <TaskItem>Publish @zcode-ui/ai-elements</TaskItem>
+                </TaskContent>
+              </Task>
+              <Tool defaultOpen>
+                <ToolHeader type="tool-read_file" state="output-available" />
+                <ToolContent>
+                  <ToolInput input={{ path: "packages/ai-elements/package.json" }} />
+                </ToolContent>
+              </Tool>
             </CardContent>
           </Card>
         </main>

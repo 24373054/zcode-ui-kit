@@ -1,13 +1,15 @@
 {
   "name": "@zcode-ui/core",
   "description": "Standalone shadcn-style React components extracted from ZCode packages/ui",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "Apache-2.0",
+  "private": false,
   "type": "module",
   "sideEffects": false,
   "files": [
     "dist",
-    "src"
+    "src",
+    "LICENSE"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -18,13 +20,13 @@
       "import": "./dist/index.js",
       "default": "./dist/index.js"
     },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
     "./utils": {
       "types": "./dist/lib/utils.d.ts",
       "import": "./dist/lib/utils.js",
       "default": "./dist/lib/utils.js"
     },
-    "./package.json": "./package.json",
-    "./src/*": "./src/*",
     "./accordion": {
       "types": "./dist/components/accordion.d.ts",
       "import": "./dist/components/accordion.js",
@@ -165,25 +167,10 @@
       "import": "./dist/components/separator.js",
       "default": "./dist/components/separator.js"
     },
-    "./shimmer": {
-      "types": "./dist/components/shimmer.d.ts",
-      "import": "./dist/components/shimmer.js",
-      "default": "./dist/components/shimmer.js"
-    },
-    "./snippet": {
-      "types": "./dist/components/snippet.d.ts",
-      "import": "./dist/components/snippet.js",
-      "default": "./dist/components/snippet.js"
-    },
     "./spinner": {
       "types": "./dist/components/spinner.d.ts",
       "import": "./dist/components/spinner.js",
       "default": "./dist/components/spinner.js"
-    },
-    "./suggestion": {
-      "types": "./dist/components/suggestion.d.ts",
-      "import": "./dist/components/suggestion.js",
-      "default": "./dist/components/suggestion.js"
     },
     "./switch": {
       "types": "./dist/components/switch.d.ts",
@@ -211,9 +198,13 @@
       "default": "./dist/components/tooltip.js"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup",
     "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run --config ../../vitest.config.ts",
     "clean": "rm -rf dist"
   },
   "dependencies": {

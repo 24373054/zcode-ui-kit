@@ -3,7 +3,7 @@ import { readdirSync } from "node:fs";
 import { join } from "node:path";
 
 const componentEntries = readdirSync(join(__dirname, "src/components"))
-  .filter((f) => f.endsWith(".tsx"))
+  .filter((f) => f.endsWith(".tsx") && !f.includes(".test."))
   .map((f) => `src/components/${f}`);
 
 export default defineConfig({
