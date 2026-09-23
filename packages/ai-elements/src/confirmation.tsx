@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Alert, AlertDescription } from "@zcode-ui/core/alert";
-import { Button } from "@zcode-ui/core/button";
-import { cn } from "@zcode-ui/core/utils";
+import { Alert, AlertDescription } from "@sealwax/zcode-ui-core/alert";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { ToolUIPart } from "ai";
 import type { ComponentProps, ReactNode } from "react";
 import { createContext, useContext, useMemo } from "react";

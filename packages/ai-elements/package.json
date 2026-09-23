@@ -1,7 +1,7 @@
 {
-  "name": "@zcode-ui/ai-elements",
+  "name": "@sealwax/zcode-ui-ai-elements",
   "description": "Standalone AI UI elements (vercel/ai-elements via ZCode) for React 19 + Tailwind v4",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "private": false,
   "type": "module",
@@ -172,7 +172,7 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
-    "@zcode-ui/core": "workspace:*",
+    "@sealwax/zcode-ui-core": "workspace:*",
     "lucide-react": "^0.511.0"
   },
   "peerDependencies": {

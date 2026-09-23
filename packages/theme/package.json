@@ -1,7 +1,7 @@
 {
-  "name": "@zcode-ui/theme",
+  "name": "@sealwax/zcode-ui-theme",
   "description": "Theme runtime for ZCode UI tokens: useTheme, applyTheme, resolveTheme",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "private": false,
   "type": "module",

@@ -1,19 +1,19 @@
 import { useMemo, useState } from "react";
-import { useTheme, type Theme } from "@zcode-ui/theme";
-import { Shimmer } from "@zcode-ui/ai-elements/shimmer";
+import { useTheme, type Theme } from "@sealwax/zcode-ui-theme";
+import { Shimmer } from "@sealwax/zcode-ui-ai-elements/shimmer";
 import {
   Snippet,
   SnippetAddon,
   SnippetCopyButton,
   SnippetInput,
-} from "@zcode-ui/ai-elements/snippet";
-import { Suggestion, Suggestions } from "@zcode-ui/ai-elements/suggestion";
+} from "@sealwax/zcode-ui-ai-elements/snippet";
+import { Suggestion, Suggestions } from "@sealwax/zcode-ui-ai-elements/suggestion";
 import {
   Sources,
   SourcesContent,
   SourcesTrigger,
   Source,
-} from "@zcode-ui/ai-elements/sources";
+} from "@sealwax/zcode-ui-ai-elements/sources";
 import {
   Confirmation,
   ConfirmationRequest,
@@ -21,22 +21,22 @@ import {
   ConfirmationRejected,
   ConfirmationActions,
   ConfirmationAction,
-} from "@zcode-ui/ai-elements/confirmation";
+} from "@sealwax/zcode-ui-ai-elements/confirmation";
 import {
   CodeBlock,
   CodeBlockActions,
   CodeBlockCopyButton,
   CodeBlockHeader,
-} from "@zcode-ui/ai-elements/code-block";
-import { Task, TaskTrigger, TaskContent, TaskItem } from "@zcode-ui/ai-elements/task";
-import { Tool, ToolHeader, ToolContent, ToolInput } from "@zcode-ui/ai-elements/tool";
+} from "@sealwax/zcode-ui-ai-elements/code-block";
+import { Task, TaskTrigger, TaskContent, TaskItem } from "@sealwax/zcode-ui-ai-elements/task";
+import { Tool, ToolHeader, ToolContent, ToolInput } from "@sealwax/zcode-ui-ai-elements/tool";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@zcode-ui/core/accordion";
-import { Alert, AlertDescription, AlertTitle } from "@zcode-ui/core/alert";
+} from "@sealwax/zcode-ui-core/accordion";
+import { Alert, AlertDescription, AlertTitle } from "@sealwax/zcode-ui-core/alert";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -47,30 +47,30 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@zcode-ui/core/alert-dialog";
-import { Avatar, AvatarFallback } from "@zcode-ui/core/avatar";
-import { Badge } from "@zcode-ui/core/badge";
-import { Button } from "@zcode-ui/core/button";
-import { ButtonGroup } from "@zcode-ui/core/button-group";
+} from "@sealwax/zcode-ui-core/alert-dialog";
+import { Avatar, AvatarFallback } from "@sealwax/zcode-ui-core/avatar";
+import { Badge } from "@sealwax/zcode-ui-core/badge";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { ButtonGroup } from "@sealwax/zcode-ui-core/button-group";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@zcode-ui/core/card";
+} from "@sealwax/zcode-ui-core/card";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   type ChartConfig,
-} from "@zcode-ui/core/chart";
-import { Checkbox } from "@zcode-ui/core/checkbox";
+} from "@sealwax/zcode-ui-core/chart";
+import { Checkbox } from "@sealwax/zcode-ui-core/checkbox";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@zcode-ui/core/collapsible";
+} from "@sealwax/zcode-ui-core/collapsible";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -78,13 +78,13 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@zcode-ui/core/dropdown-menu";
+} from "@sealwax/zcode-ui-core/dropdown-menu";
 import {
   ContextMenu,
   ContextMenuContent,
   ContextMenuItem,
   ContextMenuTrigger,
-} from "@zcode-ui/core/context-menu";
+} from "@sealwax/zcode-ui-core/context-menu";
 import {
   Command,
   CommandEmpty,
@@ -92,49 +92,49 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@zcode-ui/core/command";
-import { ScrollFadeViewport } from "@zcode-ui/core/scroll-fade-viewport";
-import { FlipMetricValue } from "@zcode-ui/core/flip-metric-value";
+} from "@sealwax/zcode-ui-core/command";
+import { ScrollFadeViewport } from "@sealwax/zcode-ui-core/scroll-fade-viewport";
+import { FlipMetricValue } from "@sealwax/zcode-ui-core/flip-metric-value";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from "@zcode-ui/core/hover-card";
-import { Input } from "@zcode-ui/core/input";
+} from "@sealwax/zcode-ui-core/hover-card";
+import { Input } from "@sealwax/zcode-ui-core/input";
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupInput,
-} from "@zcode-ui/core/input-group";
-import { Kbd } from "@zcode-ui/core/kbd";
-import { Label } from "@zcode-ui/core/label";
-import { Popover, PopoverContent, PopoverTrigger } from "@zcode-ui/core/popover";
-import { Progress } from "@zcode-ui/core/progress";
+} from "@sealwax/zcode-ui-core/input-group";
+import { Kbd } from "@sealwax/zcode-ui-core/kbd";
+import { Label } from "@sealwax/zcode-ui-core/label";
+import { Popover, PopoverContent, PopoverTrigger } from "@sealwax/zcode-ui-core/popover";
+import { Progress } from "@sealwax/zcode-ui-core/progress";
 import {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "@zcode-ui/core/resizable";
-import { ScrollArea } from "@zcode-ui/core/scroll-area";
+} from "@sealwax/zcode-ui-core/resizable";
+import { ScrollArea } from "@sealwax/zcode-ui-core/scroll-area";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@zcode-ui/core/select";
-import { Separator } from "@zcode-ui/core/separator";
-import { Spinner } from "@zcode-ui/core/spinner";
-import { Switch } from "@zcode-ui/core/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@zcode-ui/core/tabs";
-import { Textarea } from "@zcode-ui/core/textarea";
-import { toast } from "@zcode-ui/core/toast";
+} from "@sealwax/zcode-ui-core/select";
+import { Separator } from "@sealwax/zcode-ui-core/separator";
+import { Spinner } from "@sealwax/zcode-ui-core/spinner";
+import { Switch } from "@sealwax/zcode-ui-core/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@sealwax/zcode-ui-core/tabs";
+import { Textarea } from "@sealwax/zcode-ui-core/textarea";
+import { toast } from "@sealwax/zcode-ui-core/toast";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@zcode-ui/core/tooltip";
+} from "@sealwax/zcode-ui-core/tooltip";
 import {
   Dialog,
   DialogContent,
@@ -143,7 +143,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@zcode-ui/core/dialog";
+} from "@sealwax/zcode-ui-core/dialog";
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
 import { ChevronDownIcon, SearchIcon } from "lucide-react";
 
@@ -182,7 +182,7 @@ export default function App() {
             <div>
               <h1 className="text-ui-lg font-semibold tracking-tight">zcode-ui-kit</h1>
               <p className="text-ui-sm text-foreground-subtle">
-                Formal 1.0.0 · theme: <code>{theme}</code>
+                Formal 1.0.1 · theme: <code>{theme}</code>
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -347,7 +347,7 @@ export default function App() {
                   <Button variant="ghost">Hover card</Button>
                 </HoverCardTrigger>
                 <HoverCardContent className="w-64">
-                  <p className="text-ui-sm font-medium">@zcode-ui/core</p>
+                  <p className="text-ui-sm font-medium">@sealwax/zcode-ui-core</p>
                   <p className="text-ui-sm text-foreground-subtle">
                     Open and adopt in any React + Tailwind project.
                   </p>
@@ -533,7 +533,7 @@ export default function App() {
 
           <Card>
             <CardHeader>
-              <CardTitle>@zcode-ui/ai-elements</CardTitle>
+              <CardTitle>@sealwax/zcode-ui-ai-elements</CardTitle>
               <CardDescription>
                 1.0 highlights — shimmer / suggestion / snippet / sources / confirmation / code-block / task / tool
               </CardDescription>
@@ -549,7 +549,7 @@ export default function App() {
                   />
                 ))}
               </Suggestions>
-              <Snippet code="pnpm add @zcode-ui/ai-elements">
+              <Snippet code="pnpm add @sealwax/zcode-ui-ai-elements">
                 <SnippetInput />
                 <SnippetAddon align="inline-end">
                   <SnippetCopyButton />
@@ -584,7 +584,7 @@ export default function App() {
                   </ConfirmationAction>
                 </ConfirmationActions>
               </Confirmation>
-              <CodeBlock code={'export const hello = "zcode-ui 1.0.0";'} language="typescript">
+              <CodeBlock code={'export const hello = "zcode-ui 1.0.1";'} language="typescript">
                 <CodeBlockHeader>
                   <CodeBlockActions>
                     <CodeBlockCopyButton />
@@ -595,7 +595,7 @@ export default function App() {
                 <TaskTrigger title="Explore codebase" />
                 <TaskContent>
                   <TaskItem>Scan packages/ui for standalone extracts</TaskItem>
-                  <TaskItem>Publish @zcode-ui/ai-elements</TaskItem>
+                  <TaskItem>Publish @sealwax/zcode-ui-ai-elements</TaskItem>
                 </TaskContent>
               </Task>
               <Tool defaultOpen>

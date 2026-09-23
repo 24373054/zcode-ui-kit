@@ -1,6 +1,6 @@
 {
   "name": "zcode-ui-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
@@ -9,21 +9,21 @@
     "node": ">=20.19.0"
   },
   "scripts": {
-    "dev": "pnpm --filter @zcode-ui/demo run dev",
-    "build": "pnpm -r --filter @zcode-ui/tokens --filter @zcode-ui/theme --filter @zcode-ui/core --filter @zcode-ui/ai-elements run build",
+    "dev": "pnpm --filter @sealwax/zcode-ui-demo run dev",
+    "build": "pnpm -r --filter @sealwax/zcode-ui-tokens --filter @sealwax/zcode-ui-theme --filter @sealwax/zcode-ui-core --filter @sealwax/zcode-ui-ai-elements run build",
     "build:packages": "pnpm run build",
-    "build:demo": "pnpm --filter @zcode-ui/demo run build",
-    "typecheck": "pnpm -r --filter @zcode-ui/theme --filter @zcode-ui/core --filter @zcode-ui/ai-elements --filter @zcode-ui/demo run typecheck",
+    "build:demo": "pnpm --filter @sealwax/zcode-ui-demo run build",
+    "typecheck": "pnpm -r --filter @sealwax/zcode-ui-theme --filter @sealwax/zcode-ui-core --filter @sealwax/zcode-ui-ai-elements --filter @sealwax/zcode-ui-demo run typecheck",
     "test": "vitest run",
     "extract": "node ./scripts/extract.mjs",
-    "clean": "pnpm -r --filter @zcode-ui/theme --filter @zcode-ui/core --filter @zcode-ui/ai-elements run clean && rm -rf apps/demo/dist"
+    "clean": "pnpm -r --filter @sealwax/zcode-ui-theme --filter @sealwax/zcode-ui-core --filter @sealwax/zcode-ui-ai-elements run clean && rm -rf apps/demo/dist"
   },
   "pnpm": {
     "overrides": {
-      "@zcode-ui/tokens": "workspace:*",
-      "@zcode-ui/theme": "workspace:*",
-      "@zcode-ui/core": "workspace:*",
-      "@zcode-ui/ai-elements": "workspace:*"
+      "@sealwax/zcode-ui-tokens": "workspace:*",
+      "@sealwax/zcode-ui-theme": "workspace:*",
+      "@sealwax/zcode-ui-core": "workspace:*",
+      "@sealwax/zcode-ui-ai-elements": "workspace:*"
     }
   },
   "devDependencies": {

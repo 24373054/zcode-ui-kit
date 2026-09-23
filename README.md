@@ -2,21 +2,21 @@
 
 [![CI](https://github.com/24373054/zcode-ui-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/24373054/zcode-ui-kit/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](./LICENSE)
-[![Version](https://img.shields.io/badge/version-1.0.0-brightgreen.svg)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.0.1-brightgreen.svg)](./CHANGELOG.md)
 
 **中文** | **English**
 
 Standalone reusable UI kit extracted from [ZCode](https://github.com/zai-org/ZCode) `packages/ui` (Apache-2.0).  
 Open it in any **React 19 + Tailwind CSS v4** project — tokens, theme runtime, shadcn-style core, and AI elements with **no `@zcode/*` app coupling**.
 
-## Packages (1.0.0)
+## Packages (1.0.1)
 
 | Package | Contents |
 | --- | --- |
-| `@zcode-ui/tokens` | Tailwind v4 `@theme` variables + `.dark` / `.theme-zai-light` / `.theme-zai-dark` |
-| `@zcode-ui/theme` | `useTheme` / `applyTheme` / `resolveTheme` (configurable storage key) — ships `dist` |
-| `@zcode-ui/core` | Standalone shadcn-style components + `cn` — ships `dist` (ESM + types) |
-| `@zcode-ui/ai-elements` | Standalone AI UI primitives (code-block, sources, tool, prompt-input, …) — ships `dist` |
+| `@sealwax/zcode-ui-tokens` | Tailwind v4 `@theme` variables + `.dark` / `.theme-zai-light` / `.theme-zai-dark` |
+| `@sealwax/zcode-ui-theme` | `useTheme` / `applyTheme` / `resolveTheme` (configurable storage key) — ships `dist` |
+| `@sealwax/zcode-ui-core` | Standalone shadcn-style components + `cn` — ships `dist` (ESM + types) |
+| `@sealwax/zcode-ui-ai-elements` | Standalone AI UI primitives (code-block, sources, tool, prompt-input, …) — ships `dist` |
 
 ## What it is NOT
 
@@ -42,16 +42,16 @@ Host app CSS (Tailwind v4):
 @import "tw-animate-css";
 @import "tailwind-scrollbar-hide/v4";
 @import "shadcn/tailwind.css";
-@import "@zcode-ui/tokens/styles.css";
+@import "@sealwax/zcode-ui-tokens/styles.css";
 
-@source "../node_modules/@zcode-ui/core/dist/**/*.{js,jsx}";
-@source "../node_modules/@zcode-ui/ai-elements/dist/**/*.{js,jsx}";
+@source "../node_modules/@sealwax/zcode-ui-core/dist/**/*.{js,jsx}";
+@source "../node_modules/@sealwax/zcode-ui-ai-elements/dist/**/*.{js,jsx}";
 ```
 
 ```tsx
-import { enableBrowserThemeSurface, useTheme } from "@zcode-ui/theme";
-import { Button } from "@zcode-ui/core/button";
-import { Sources, SourcesTrigger, SourcesContent, Source } from "@zcode-ui/ai-elements/sources";
+import { enableBrowserThemeSurface, useTheme } from "@sealwax/zcode-ui-theme";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { Sources, SourcesTrigger, SourcesContent, Source } from "@sealwax/zcode-ui-ai-elements/sources";
 
 enableBrowserThemeSurface();
 const { theme, setTheme } = useTheme({ storageKey: "my-app-theme" });
@@ -67,7 +67,7 @@ const { theme, setTheme } = useTheme({ storageKey: "my-app-theme" });
 
 - **Published / CI:** packages export `dist/*.js` + `dist/*.d.ts` (built with tsup).
 - **This monorepo demo:** Vite aliases point at `packages/*/src` for HMR.
-- Advanced: `@zcode-ui/*/src/*` remains reachable for source-first hosts.
+- Advanced: `@sealwax/zcode-ui-*/src/*` remains reachable for source-first hosts.
 
 ## License
 

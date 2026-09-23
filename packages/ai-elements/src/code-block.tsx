@@ -1,19 +1,19 @@
 /*
  * Derived from vercel/ai-elements (packages/elements/src/code-block.tsx).
  * Copyright 2023 Vercel, Inc. Licensed under Apache-2.0.
- * Adapted for @zcode-ui/ai-elements (standalone shiki build; no ZCode app coupling).
+ * Adapted for @sealwax/zcode-ui-ai-elements (standalone shiki build; no ZCode app coupling).
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
+import { Button } from "@sealwax/zcode-ui-core/button";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@zcode-ui/core/select";
-import { cn } from "@zcode-ui/core/utils";
+} from "@sealwax/zcode-ui-core/select";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import type { ComponentProps, CSSProperties, HTMLAttributes } from "react";
 import {

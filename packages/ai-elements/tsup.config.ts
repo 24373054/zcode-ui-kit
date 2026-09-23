@@ -21,7 +21,7 @@ export default defineConfig({
     "react-dom",
     "react/jsx-runtime",
     "lucide-react",
-    "@zcode-ui/core",
+    "@sealwax/zcode-ui-core",
     /^@zcode-ui\/core\//,
     "ai",
     "motion",

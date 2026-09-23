@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
-import { ScrollArea, ScrollBar } from "@zcode-ui/core/scroll-area";
-import { cn } from "@zcode-ui/core/utils";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { ScrollArea, ScrollBar } from "@sealwax/zcode-ui-core/scroll-area";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { ComponentProps } from "react";
 import { useCallback } from "react";
 

@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@zcode-ui/core/accordion";
-import { Badge } from "@zcode-ui/core/badge";
-import { cn } from "@zcode-ui/core/utils";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@sealwax/zcode-ui-core/accordion";
+import { Badge } from "@sealwax/zcode-ui-core/badge";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { Tool } from "ai";
 import { BotIcon } from "lucide-react";
 import type { ComponentProps } from "react";

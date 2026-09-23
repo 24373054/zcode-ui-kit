@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Badge } from "@zcode-ui/core/badge";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { cn } from "@zcode-ui/core/utils";
+import { Badge } from "@sealwax/zcode-ui-core/badge";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { DynamicToolUIPart, ToolUIPart } from "ai";
 import {
   CheckCircleIcon,

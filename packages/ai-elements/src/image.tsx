@@ -2,9 +2,9 @@
  * Derived from vercel/ai-elements (packages/elements/src/image.tsx).
  * Copyright 2023 Vercel, Inc. Licensed under Apache-2.0.
  * Modified by ZCode: local integration, formatting and adaptations.
- * Adapted for @zcode-ui/ai-elements: local GeneratedImage shape (no hard ai type pin).
+ * Adapted for @sealwax/zcode-ui-ai-elements: local GeneratedImage shape (no hard ai type pin).
  */
-import { cn } from "@zcode-ui/core/utils";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 
 /** Minimal generated-image shape compatible with the Vercel AI SDK. */
 export type GeneratedImageData = {

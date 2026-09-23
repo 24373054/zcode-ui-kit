@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@zcode-ui/core/tabs";
-import { cn } from "@zcode-ui/core/utils";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@sealwax/zcode-ui-core/tabs";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { ToolUIPart } from "ai";
 import { ChevronDownIcon, Code } from "lucide-react";
 import type { ComponentProps } from "react";

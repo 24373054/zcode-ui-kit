@@ -1,6 +1,6 @@
-# @zcode-ui/theme
+# @sealwax/zcode-ui-theme
 
-Theme preference helpers for `@zcode-ui/tokens` palettes.
+Theme preference helpers for `@sealwax/zcode-ui-tokens` palettes.
 
 ```sh
 pnpm build      # → dist/

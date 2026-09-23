@@ -1,2 +1,2 @@
-/** Design tokens package — import `@zcode-ui/tokens/styles.css` at app root. */
+/** Design tokens package — import `@sealwax/zcode-ui-tokens/styles.css` at app root. */
 export {};

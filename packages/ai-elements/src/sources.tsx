@@ -6,8 +6,8 @@
  */
 "use client";
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { cn } from "@zcode-ui/core/utils";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import { BookIcon, ChevronDownIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 

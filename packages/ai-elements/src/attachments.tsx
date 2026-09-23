@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@zcode-ui/core/hover-card";
-import { cn } from "@zcode-ui/core/utils";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@sealwax/zcode-ui-core/hover-card";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { FileUIPart, SourceDocumentUIPart } from "ai";
 import {
   FileTextIcon,

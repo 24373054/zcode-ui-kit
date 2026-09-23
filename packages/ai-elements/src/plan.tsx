@@ -6,7 +6,7 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
+import { Button } from "@sealwax/zcode-ui-core/button";
 import {
   Card,
   CardAction,
@@ -15,9 +15,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@zcode-ui/core/card";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { cn } from "@zcode-ui/core/utils";
+} from "@sealwax/zcode-ui-core/card";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import { ChevronsUpDownIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 import { createContext, useContext, useMemo } from "react";

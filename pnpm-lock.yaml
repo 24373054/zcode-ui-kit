@@ -5,10 +5,10 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@zcode-ui/tokens': workspace:*
-  '@zcode-ui/theme': workspace:*
-  '@zcode-ui/core': workspace:*
-  '@zcode-ui/ai-elements': workspace:*
+  '@sealwax/zcode-ui-tokens': workspace:*
+  '@sealwax/zcode-ui-theme': workspace:*
+  '@sealwax/zcode-ui-core': workspace:*
+  '@sealwax/zcode-ui-ai-elements': workspace:*
 
 importers:
 
@@ -47,16 +47,16 @@ importers:
 
   apps/demo:
     dependencies:
-      '@zcode-ui/ai-elements':
+      '@sealwax/zcode-ui-ai-elements':
         specifier: workspace:*
         version: link:../../packages/ai-elements
-      '@zcode-ui/core':
+      '@sealwax/zcode-ui-core':
         specifier: workspace:*
         version: link:../../packages/core
-      '@zcode-ui/theme':
+      '@sealwax/zcode-ui-theme':
         specifier: workspace:*
         version: link:../../packages/theme
-      '@zcode-ui/tokens':
+      '@sealwax/zcode-ui-tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       ai:
@@ -117,7 +117,7 @@ importers:
 
   packages/ai-elements:
     dependencies:
-      '@zcode-ui/core':
+      '@sealwax/zcode-ui-core':
         specifier: workspace:*
         version: link:../core
       lucide-react:

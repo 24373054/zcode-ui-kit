@@ -6,10 +6,10 @@
  */
 "use client";
 
-import { Avatar, AvatarFallback } from "@zcode-ui/core/avatar";
-import { Button } from "@zcode-ui/core/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { cn } from "@zcode-ui/core/utils";
+import { Avatar, AvatarFallback } from "@sealwax/zcode-ui-core/avatar";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import { CheckIcon, CopyIcon, FileIcon, GitCommitIcon, MinusIcon, PlusIcon } from "lucide-react";
 import type { ComponentProps, HTMLAttributes } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";

@@ -10,11 +10,11 @@ Relevant attribution from upstream ZCode NOTICE.md (section IV summary):
   也不覆盖第三方软件、复制代码、原生二进制、字体、图标、网页素材及其他资源的独立条款。
 
 This kit includes the standalone design tokens, theme runtime, selected
-shadcn-style React components (`@zcode-ui/core`), and selected AI UI elements
-(`@zcode-ui/ai-elements`) from packages/ui. It does NOT include the ZCode
+shadcn-style React components (`@sealwax/zcode-ui-core`), and selected AI UI elements
+(`@sealwax/zcode-ui-ai-elements`) from packages/ui. It does NOT include the ZCode
 application shell, agent runtime, login, git, Electron telemetry, or brand logo assets.
 
-Selected files under `@zcode-ui/ai-elements` (and formerly under core in 0.2.0:
+Selected files under `@sealwax/zcode-ui-ai-elements` (and formerly under core in 0.2.0:
 shimmer, suggestion, snippet) are derived from vercel/ai-elements (Apache-2.0),
 as adapted in ZCode packages/ui. The standalone `code-block` follows the
 vercel/ai-elements shiki implementation rather than ZCode’s Mermaid-coupled variant.

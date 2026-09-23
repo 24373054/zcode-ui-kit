@@ -11,8 +11,8 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@zcode-ui/core/dropdown-menu";
-import { cn } from "@zcode-ui/core/utils";
+} from "@sealwax/zcode-ui-core/dropdown-menu";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import { ImageIcon, Monitor, PlusIcon } from "lucide-react";
 import type { ComponentProps } from "react";
 import { useCallback } from "react";

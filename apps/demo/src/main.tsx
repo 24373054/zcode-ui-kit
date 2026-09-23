@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { enableBrowserThemeSurface } from "@zcode-ui/theme";
+import { enableBrowserThemeSurface } from "@sealwax/zcode-ui-theme";
 import App from "./App";
 import "./styles.css";
 

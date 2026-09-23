@@ -6,9 +6,9 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@zcode-ui/core/tooltip";
-import { cn } from "@zcode-ui/core/utils";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@sealwax/zcode-ui-core/tooltip";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { LucideIcon } from "lucide-react";
 import { XIcon } from "lucide-react";
 import type { ComponentProps, HTMLAttributes } from "react";

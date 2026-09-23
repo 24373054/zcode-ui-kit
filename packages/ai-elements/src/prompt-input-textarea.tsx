@@ -6,8 +6,8 @@
  */
 "use client";
 
-import { InputGroupTextarea } from "@zcode-ui/core/input-group";
-import { cn } from "@zcode-ui/core/utils";
+import { InputGroupTextarea } from "@sealwax/zcode-ui-core/input-group";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type {
   ChangeEvent,
   ClipboardEventHandler,

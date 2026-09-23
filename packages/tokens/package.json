@@ -1,7 +1,7 @@
 {
-  "name": "@zcode-ui/tokens",
+  "name": "@sealwax/zcode-ui-tokens",
   "description": "ZCode UI design tokens: @theme scale, .dark / .theme-zai-light / .theme-zai-dark palettes",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "license": "Apache-2.0",
   "private": false,
   "type": "module",
@@ -29,7 +29,7 @@
     }
   },
   "scripts": {
-    "build": "node -e \"console.log('@zcode-ui/tokens: CSS-only, nothing to compile')\"",
-    "typecheck": "node -e \"console.log('@zcode-ui/tokens: CSS-only, skip typecheck')\""
+    "build": "node -e \"console.log('@sealwax/zcode-ui-tokens: CSS-only, nothing to compile')\"",
+    "typecheck": "node -e \"console.log('@sealwax/zcode-ui-tokens: CSS-only, skip typecheck')\""
   }
 }

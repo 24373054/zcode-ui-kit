@@ -6,7 +6,7 @@
  */
 "use client";
 
-import { cn } from "@zcode-ui/core/utils";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { RiveParameters } from "@rive-app/react-webgl2";
 import {
   useRive,

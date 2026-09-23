@@ -6,10 +6,10 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@zcode-ui/core/collapsible";
-import { ScrollArea } from "@zcode-ui/core/scroll-area";
-import { cn } from "@zcode-ui/core/utils";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@sealwax/zcode-ui-core/collapsible";
+import { ScrollArea } from "@sealwax/zcode-ui-core/scroll-area";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import {
   CheckCircle2Icon,
   ChevronDownIcon,

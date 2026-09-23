@@ -62,7 +62,7 @@ const CORE_WHITELIST = [
   "flip-metric-value",
 ];
 
-/** ai-elements copied from ZCode with import rewrites into @zcode-ui/core. */
+/** ai-elements copied from ZCode with import rewrites into @sealwax/zcode-ui-core. */
 const AI_ELEMENTS = [
   "agent",
   "artifact",
@@ -118,24 +118,24 @@ function rewriteCoreUiImports(text) {
 
 function rewriteAiImports(text) {
   let out = text;
-  // @/ utils → @zcode-ui/core/utils
+  // @/ utils → @sealwax/zcode-ui-core/utils
   out = out.replaceAll(
     'from "@/components/lib/utils.js"',
-    'from "@zcode-ui/core/utils"',
+    'from "@sealwax/zcode-ui-core/utils"',
   );
   out = out.replaceAll(
     "from '@/components/lib/utils.js'",
-    "from '@zcode-ui/core/utils'",
+    "from '@sealwax/zcode-ui-core/utils'",
   );
-  // relative ../ui/X → @zcode-ui/core/X
+  // relative ../ui/X → @sealwax/zcode-ui-core/X
   out = out.replace(
     /from\s+["']\.\.\/ui\/([^"']+)\.js["']/g,
-    'from "@zcode-ui/core/$1"',
+    'from "@sealwax/zcode-ui-core/$1"',
   );
-  // relative ../lib/utils → @zcode-ui/core/utils
+  // relative ../lib/utils → @sealwax/zcode-ui-core/utils
   out = out.replace(
     /from\s+["']\.\.\/lib\/utils\.js["']/g,
-    'from "@zcode-ui/core/utils"',
+    'from "@sealwax/zcode-ui-core/utils"',
   );
   return out;
 }
@@ -191,7 +191,7 @@ export { Spinner };
   console.log("wrote core", name);
 }
 
-// Remove former ai-elements that lived in core (moved to @zcode-ui/ai-elements)
+// Remove former ai-elements that lived in core (moved to @sealwax/zcode-ui-ai-elements)
 for (const name of ["shimmer", "suggestion", "snippet"]) {
   const p = join(coreCompDir, `${name}.tsx`);
   if (existsSync(p)) {

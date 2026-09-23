@@ -6,8 +6,8 @@
  */
 "use client";
 
-import { Button } from "@zcode-ui/core/button";
-import { cn } from "@zcode-ui/core/utils";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import RawAnsi from "ansi-to-react";
 import { CheckIcon, CopyIcon, TerminalIcon, Trash2Icon } from "lucide-react";
 import type { ComponentProps, ComponentType, HTMLAttributes } from "react";

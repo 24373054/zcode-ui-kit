@@ -1,6 +1,6 @@
 {
-  "name": "@zcode-ui/demo",
-  "version": "1.0.0",
+  "name": "@sealwax/zcode-ui-demo",
+  "version": "1.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,15 +10,15 @@
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
-    "@zcode-ui/core": "workspace:*",
-    "@zcode-ui/theme": "workspace:*",
-    "@zcode-ui/tokens": "workspace:*",
+    "@sealwax/zcode-ui-core": "workspace:*",
+    "@sealwax/zcode-ui-theme": "workspace:*",
+    "@sealwax/zcode-ui-tokens": "workspace:*",
     "lucide-react": "^0.511.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "motion": "^12.38.0",
     "recharts": "^3.8.0",
-    "@zcode-ui/ai-elements": "workspace:*",
+    "@sealwax/zcode-ui-ai-elements": "workspace:*",
     "shiki": "^4.0.2",
     "use-stick-to-bottom": "^1.1.3",
     "ai": "^6.0.138"

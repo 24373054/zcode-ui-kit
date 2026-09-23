@@ -14,10 +14,10 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@zcode-ui/core/command";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@zcode-ui/core/hover-card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@zcode-ui/core/select";
-import { cn } from "@zcode-ui/core/utils";
+} from "@sealwax/zcode-ui-core/command";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@sealwax/zcode-ui-core/hover-card";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@sealwax/zcode-ui-core/select";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { ComponentProps, HTMLAttributes } from "react";
 
 // ============================================================================

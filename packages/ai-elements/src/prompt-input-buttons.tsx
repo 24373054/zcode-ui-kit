@@ -6,10 +6,10 @@
  */
 "use client";
 
-import { InputGroupButton } from "@zcode-ui/core/input-group";
-import { Spinner } from "@zcode-ui/core/spinner";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@zcode-ui/core/tooltip";
-import { cn } from "@zcode-ui/core/utils";
+import { InputGroupButton } from "@sealwax/zcode-ui-core/input-group";
+import { Spinner } from "@sealwax/zcode-ui-core/spinner";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@sealwax/zcode-ui-core/tooltip";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { ChatStatus } from "ai";
 import { CornerDownLeftIcon, SquareIcon, XIcon } from "lucide-react";
 import type { ComponentProps, ReactNode } from "react";

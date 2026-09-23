@@ -1,7 +1,7 @@
 "use client";
 
 import type { ComponentProps } from "react";
-import { cn } from "@zcode-ui/core/utils";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 
 export type MarkdownBlockquoteProps = ComponentProps<"blockquote"> & {
   node?: unknown;

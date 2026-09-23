@@ -33,7 +33,7 @@ Requires Node `>=20.19` and pnpm `10.32.1` (see `packageManager`).
 
 1. Confirm zero (or removable) `@zcode/*` / heavy `@/` app coupling.
 2. Add to `AI_ELEMENTS` in `extract.mjs` + manifest `included` / `skipped`.
-3. Prefer rewriting `../ui/*` → `@zcode-ui/core/*`.
+3. Prefer rewriting `../ui/*` → `@sealwax/zcode-ui-core/*`.
 4. Declare optional peers for heavy deps (`ai`, `shiki`, `motion`, rive, …).
 5. Skip Electron, telemetry, brand logos, ReactFlow, mermaid app stacks.
 

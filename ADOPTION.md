@@ -1,4 +1,4 @@
-# Adopting zcode-ui-kit 1.0
+# Adopting zcode-ui-kit 1.0.1
 
 Checklist for using the kit in a random React + Tailwind v4 project.
 
@@ -7,7 +7,7 @@ Checklist for using the kit in a random React + Tailwind v4 project.
 **From npm (when published):**
 
 ```sh
-pnpm add @zcode-ui/tokens @zcode-ui/theme @zcode-ui/core @zcode-ui/ai-elements
+pnpm add @sealwax/zcode-ui-tokens @sealwax/zcode-ui-theme @sealwax/zcode-ui-core @sealwax/zcode-ui-ai-elements
 ```
 
 **Monorepo / path:**
@@ -15,10 +15,10 @@ pnpm add @zcode-ui/tokens @zcode-ui/theme @zcode-ui/core @zcode-ui/ai-elements
 ```json
 {
   "dependencies": {
-    "@zcode-ui/tokens": "file:../zcode-ui-kit/packages/tokens",
-    "@zcode-ui/theme": "file:../zcode-ui-kit/packages/theme",
-    "@zcode-ui/core": "file:../zcode-ui-kit/packages/core",
-    "@zcode-ui/ai-elements": "file:../zcode-ui-kit/packages/ai-elements"
+    "@sealwax/zcode-ui-tokens": "file:../zcode-ui-kit/packages/tokens",
+    "@sealwax/zcode-ui-theme": "file:../zcode-ui-kit/packages/theme",
+    "@sealwax/zcode-ui-core": "file:../zcode-ui-kit/packages/core",
+    "@sealwax/zcode-ui-ai-elements": "file:../zcode-ui-kit/packages/ai-elements"
   }
 }
 ```
@@ -31,7 +31,7 @@ After install, run `pnpm build` in the kit so `dist/` exists if you consume pack
 pnpm add react react-dom
 pnpm add -D tailwindcss @tailwindcss/vite tw-animate-css tailwind-scrollbar-hide shadcn
 # optional peers by feature:
-pnpm add recharts          # @zcode-ui/core chart
+pnpm add recharts          # @sealwax/zcode-ui-core chart
 pnpm add motion            # flip-metric-value / shimmer
 pnpm add ai shiki          # confirmation / tool / code-block / image types
 pnpm add nanoid            # prompt-input
@@ -55,10 +55,10 @@ export default defineConfig({ plugins: [react(), tailwindcss()] });
 @import "tw-animate-css";
 @import "tailwind-scrollbar-hide/v4";
 @import "shadcn/tailwind.css";
-@import "@zcode-ui/tokens/styles.css";
+@import "@sealwax/zcode-ui-tokens/styles.css";
 
-@source "../node_modules/@zcode-ui/core/dist/**/*.{js,jsx}";
-@source "../node_modules/@zcode-ui/ai-elements/dist/**/*.{js,jsx}";
+@source "../node_modules/@sealwax/zcode-ui-core/dist/**/*.{js,jsx}";
+@source "../node_modules/@sealwax/zcode-ui-ai-elements/dist/**/*.{js,jsx}";
 @source "./src/**/*.{ts,tsx}";
 ```
 
@@ -67,7 +67,7 @@ export default defineConfig({ plugins: [react(), tailwindcss()] });
 ## 4. Theme
 
 ```tsx
-import { enableBrowserThemeSurface, useTheme } from "@zcode-ui/theme";
+import { enableBrowserThemeSurface, useTheme } from "@sealwax/zcode-ui-theme";
 
 enableBrowserThemeSurface();
 
@@ -84,13 +84,13 @@ Theme classes on `<html>`: `.dark`, `.theme-zai-light`, `.theme-zai-dark`.
 ## 5. Import components
 
 ```tsx
-import { Button } from "@zcode-ui/core/button";
-import { cn } from "@zcode-ui/core/utils";
-import { Shimmer } from "@zcode-ui/ai-elements/shimmer";
-import { CodeBlock } from "@zcode-ui/ai-elements/code-block";
+import { Button } from "@sealwax/zcode-ui-core/button";
+import { cn } from "@sealwax/zcode-ui-core/utils";
+import { Shimmer } from "@sealwax/zcode-ui-ai-elements/shimmer";
+import { CodeBlock } from "@sealwax/zcode-ui-ai-elements/code-block";
 ```
 
-**Breaking from 0.2.0:** `shimmer` / `suggestion` / `snippet` moved from `@zcode-ui/core` → `@zcode-ui/ai-elements`.
+**Breaking from 0.2.0:** `shimmer` / `suggestion` / `snippet` moved from `@sealwax/zcode-ui-core` → `@sealwax/zcode-ui-ai-elements`.
 
 ## 6. Verify
 

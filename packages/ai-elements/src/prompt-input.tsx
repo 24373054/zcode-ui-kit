@@ -6,8 +6,8 @@
  */
 "use client";
 
-import { InputGroup, InputGroupAddon } from "@zcode-ui/core/input-group";
-import { cn } from "@zcode-ui/core/utils";
+import { InputGroup, InputGroupAddon } from "@sealwax/zcode-ui-core/input-group";
+import { cn } from "@sealwax/zcode-ui-core/utils";
 import type { FileUIPart, SourceDocumentUIPart } from "ai";
 import { nanoid } from "nanoid";
 import type {
