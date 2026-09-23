@@ -1,0 +1,27 @@
+{
+  "name": "zcode-ui-kit",
+  "version": "0.1.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "packageManager": "pnpm@10.32.1",
+  "engines": {
+    "node": ">=20.19.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @zcode-ui/demo run dev",
+    "build:demo": "pnpm --filter @zcode-ui/demo run build",
+    "typecheck": "pnpm --filter @zcode-ui/demo run typecheck",
+    "extract": "node ./scripts/extract.mjs"
+  },
+  "pnpm": {
+    "overrides": {
+      "@zcode-ui/tokens": "workspace:*",
+      "@zcode-ui/theme": "workspace:*",
+      "@zcode-ui/core": "workspace:*"
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

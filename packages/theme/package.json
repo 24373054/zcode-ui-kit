@@ -1,0 +1,19 @@
+{
+  "name": "@zcode-ui/theme",
+  "description": "Theme runtime for ZCode UI tokens: useTheme, applyTheme, resolveTheme",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "type": "module",
+  "files": ["src"],
+  "exports": {
+    ".": "./src/index.ts",
+    "./package.json": "./package.json"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.14",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,18 @@
+zcode-ui-kit
+Copyright 2026 Z.AI Co., Ltd
+
+This product is a derivative extract of the ZCode UI package
+(https://github.com/zai-org/ZCode — packages/ui), licensed under Apache-2.0.
+
+Relevant attribution from upstream ZCode NOTICE.md (section IV summary):
+
+  本仓库第一方代码依照根 LICENSE 采用 Apache-2.0；该许可不替其他权利人新增授权，
+  也不覆盖第三方软件、复制代码、原生二进制、字体、图标、网页素材及其他资源的独立条款。
+
+This kit includes only the standalone design tokens, theme runtime, and selected
+shadcn-style React components from packages/ui. It does NOT include the ZCode
+application shell, agent runtime, login, git, terminal, or brand logo assets.
+
+Third-party runtime dependencies (radix-ui, lucide-react, cmdk, class-variance-authority,
+clsx, tailwind-merge, react-resizable-panels, Tailwind CSS, shadcn CSS helpers, etc.)
+retain their own licenses; see each package's NOTICE / license files when redistributing.

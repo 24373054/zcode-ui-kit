@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwind-scrollbar-hide/v4";
+@import "shadcn/tailwind.css";
+@import "@zcode-ui/tokens/styles.css";
+
+/* Scan kit components + demo for Tailwind class generation */
+@source "../../../packages/core/src/**/*.{ts,tsx}";
+@source "./**/*.{ts,tsx}";
