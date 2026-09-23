@@ -1,3 +1,4 @@
+import { useMemo, useState } from "react";
 import { useTheme, type Theme } from "@zcode-ui/theme";
 import {
   Accordion,
@@ -6,9 +7,21 @@ import {
   AccordionTrigger,
 } from "@zcode-ui/core/accordion";
 import { Alert, AlertDescription, AlertTitle } from "@zcode-ui/core/alert";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@zcode-ui/core/alert-dialog";
 import { Avatar, AvatarFallback } from "@zcode-ui/core/avatar";
 import { Badge } from "@zcode-ui/core/badge";
 import { Button } from "@zcode-ui/core/button";
+import { ButtonGroup } from "@zcode-ui/core/button-group";
 import {
   Card,
   CardContent,
@@ -16,17 +29,63 @@ import {
   CardHeader,
   CardTitle,
 } from "@zcode-ui/core/card";
+import {
+  ChartContainer,
+  ChartTooltip,
+  ChartTooltipContent,
+  type ChartConfig,
+} from "@zcode-ui/core/chart";
 import { Checkbox } from "@zcode-ui/core/checkbox";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@zcode-ui/core/collapsible";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@zcode-ui/core/dropdown-menu";
+import {
+  ContextMenu,
+  ContextMenuContent,
+  ContextMenuItem,
+  ContextMenuTrigger,
+} from "@zcode-ui/core/context-menu";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@zcode-ui/core/command";
+import { ScrollFadeViewport } from "@zcode-ui/core/scroll-fade-viewport";
+import { FlipMetricValue } from "@zcode-ui/core/flip-metric-value";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@zcode-ui/core/hover-card";
 import { Input } from "@zcode-ui/core/input";
-import { Label } from "@zcode-ui/core/label";
-import { Progress } from "@zcode-ui/core/progress";
-import { Separator } from "@zcode-ui/core/separator";
-import { Spinner } from "@zcode-ui/core/spinner";
-import { Switch } from "@zcode-ui/core/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@zcode-ui/core/tabs";
-import { Textarea } from "@zcode-ui/core/textarea";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@zcode-ui/core/input-group";
 import { Kbd } from "@zcode-ui/core/kbd";
-import { toast } from "@zcode-ui/core/toast";
+import { Label } from "@zcode-ui/core/label";
+import { Popover, PopoverContent, PopoverTrigger } from "@zcode-ui/core/popover";
+import { Progress } from "@zcode-ui/core/progress";
+import {
+  ResizableHandle,
+  ResizablePanel,
+  ResizablePanelGroup,
+} from "@zcode-ui/core/resizable";
+import { ScrollArea } from "@zcode-ui/core/scroll-area";
 import {
   Select,
   SelectContent,
@@ -34,6 +93,26 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@zcode-ui/core/select";
+import { Separator } from "@zcode-ui/core/separator";
+import { Shimmer } from "@zcode-ui/core/shimmer";
+import {
+  Snippet,
+  SnippetAddon,
+  SnippetCopyButton,
+  SnippetInput,
+} from "@zcode-ui/core/snippet";
+import { Spinner } from "@zcode-ui/core/spinner";
+import { Suggestion, Suggestions } from "@zcode-ui/core/suggestion";
+import { Switch } from "@zcode-ui/core/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@zcode-ui/core/tabs";
+import { Textarea } from "@zcode-ui/core/textarea";
+import { toast } from "@zcode-ui/core/toast";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@zcode-ui/core/tooltip";
 import {
   Dialog,
   DialogContent,
@@ -43,12 +122,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@zcode-ui/core/dialog";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@zcode-ui/core/tooltip";
+import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { ChevronDownIcon, SearchIcon } from "lucide-react";
 
 const THEMES: { value: Theme; label: string }[] = [
   { value: "zai-light", label: "Zai Light" },
@@ -56,8 +131,26 @@ const THEMES: { value: Theme; label: string }[] = [
   { value: "system", label: "System" },
 ];
 
+const chartConfig = {
+  desktop: { label: "Desktop", color: "var(--color-usage-chart-1, #0b7fff)" },
+  mobile: { label: "Mobile", color: "var(--color-primary, #6366f1)" },
+} satisfies ChartConfig;
+
+const chartData = [
+  { month: "Jan", desktop: 186, mobile: 80 },
+  { month: "Feb", desktop: 305, mobile: 200 },
+  { month: "Mar", desktop: 237, mobile: 120 },
+  { month: "Apr", desktop: 273, mobile: 190 },
+];
+
 export default function App() {
-  const { theme, setTheme } = useTheme({ storageKey: "zcode-ui-kit-demo-theme" });
+  const { theme, setTheme } = useTheme({
+    storageKey: "zcode-ui-kit-demo-theme",
+    defaultTheme: "zai-dark",
+  });
+  const [metric, setMetric] = useState(1280);
+  const [openCollapsible, setOpenCollapsible] = useState(false);
+  const suggestions = useMemo(() => ["Summarize", "Refactor", "Write tests"], []);
 
   return (
     <TooltipProvider>
@@ -67,7 +160,7 @@ export default function App() {
             <div>
               <h1 className="text-ui-lg font-semibold tracking-tight">zcode-ui-kit</h1>
               <p className="text-ui-sm text-foreground-subtle">
-                Standalone extract from ZCode packages/ui
+                Standalone extract · v0.2.0 · theme: <code>{theme}</code>
               </p>
             </div>
             <div className="flex flex-wrap items-center gap-2">
@@ -89,19 +182,32 @@ export default function App() {
           <Card>
             <CardHeader>
               <CardTitle>Buttons & badges</CardTitle>
-              <CardDescription>Core actions and status chips</CardDescription>
+              <CardDescription>Core actions, groups, and status chips</CardDescription>
             </CardHeader>
-            <CardContent className="flex flex-wrap items-center gap-3">
-              <Button>Primary</Button>
-              <Button variant="secondary">Secondary</Button>
-              <Button variant="outline">Outline</Button>
-              <Button variant="ghost">Ghost</Button>
-              <Button variant="destructive">Destructive</Button>
-              <Badge>Default</Badge>
-              <Badge variant="secondary">Secondary</Badge>
-              <Badge variant="outline">Outline</Badge>
-              <Spinner />
-              <Kbd>⌘K</Kbd>
+            <CardContent className="flex flex-col gap-4">
+              <div className="flex flex-wrap items-center gap-3">
+                <Button>Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+                <Button variant="outline">Outline</Button>
+                <Button variant="ghost">Ghost</Button>
+                <Button variant="destructive">Destructive</Button>
+                <Badge>Default</Badge>
+                <Badge variant="secondary">Secondary</Badge>
+                <Badge variant="outline">Outline</Badge>
+                <Spinner />
+                <Kbd>⌘K</Kbd>
+              </div>
+              <ButtonGroup>
+                <Button variant="outline" size="sm">
+                  Left
+                </Button>
+                <Button variant="outline" size="sm">
+                  Middle
+                </Button>
+                <Button variant="outline" size="sm">
+                  Right
+                </Button>
+              </ButtonGroup>
             </CardContent>
           </Card>
 
@@ -131,6 +237,15 @@ export default function App() {
                 <Label htmlFor="bio">Bio</Label>
                 <Textarea id="bio" placeholder="Short bio…" rows={3} />
               </div>
+              <div className="grid gap-2 md:col-span-2">
+                <Label>Search (input group)</Label>
+                <InputGroup>
+                  <InputGroupAddon>
+                    <SearchIcon className="size-4" />
+                  </InputGroupAddon>
+                  <InputGroupInput placeholder="Search components…" />
+                </InputGroup>
+              </div>
               <div className="flex items-center gap-2">
                 <Checkbox id="terms" defaultChecked />
                 <Label htmlFor="terms">Accept terms</Label>
@@ -144,46 +259,134 @@ export default function App() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Feedback</CardTitle>
+              <CardTitle>Overlays & menus</CardTitle>
+            </CardHeader>
+            <CardContent className="flex flex-wrap gap-3">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="secondary">Dialog</Button>
+                </DialogTrigger>
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>Example dialog</DialogTitle>
+                    <DialogDescription>
+                      Dialog, alert-dialog, menus, and popovers are included in core.
+                    </DialogDescription>
+                  </DialogHeader>
+                  <DialogFooter>
+                    <Button>Confirm</Button>
+                  </DialogFooter>
+                </DialogContent>
+              </Dialog>
+
+              <AlertDialog>
+                <AlertDialogTrigger asChild>
+                  <Button variant="destructive">Alert dialog</Button>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This action cannot be undone (demo only).
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction>Continue</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="outline">Dropdown</Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onSelect={() => toast("Copied", { variant: "info" })}>
+                    Copy
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>Share</DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button variant="outline">Popover</Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-64 text-ui-sm">
+                  Lightweight popover content for filters or hints.
+                </PopoverContent>
+              </Popover>
+
+              <HoverCard>
+                <HoverCardTrigger asChild>
+                  <Button variant="ghost">Hover card</Button>
+                </HoverCardTrigger>
+                <HoverCardContent className="w-64">
+                  <p className="text-ui-sm font-medium">@zcode-ui/core</p>
+                  <p className="text-ui-sm text-foreground-subtle">
+                    Open and adopt in any React + Tailwind project.
+                  </p>
+                </HoverCardContent>
+              </HoverCard>
+
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Button variant="outline">Tooltip</Button>
+                </TooltipTrigger>
+                <TooltipContent>Tooltip content</TooltipContent>
+              </Tooltip>
+
+              <Button
+                variant="outline"
+                onClick={() => toast("Saved successfully", { variant: "info" })}
+              >
+                Toast
+              </Button>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Feedback & layout</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col gap-4">
               <Alert>
                 <AlertTitle>Heads up</AlertTitle>
                 <AlertDescription>
-                  This kit ships TypeScript source for Vite/esbuild hosts.
+                  Packages ship <code>dist/</code> (ESM + types). This demo uses workspace source
+                  via Vite aliases for HMR.
                 </AlertDescription>
               </Alert>
               <Progress value={64} />
-              <div className="flex flex-wrap gap-3">
-                <Button
-                  variant="outline"
-                  onClick={() => toast("Saved successfully", { variant: "info" })}
-                >
-                  Show toast
-                </Button>
-                <Dialog>
-                  <DialogTrigger asChild>
-                    <Button variant="secondary">Open dialog</Button>
-                  </DialogTrigger>
-                  <DialogContent>
-                    <DialogHeader>
-                      <DialogTitle>Example dialog</DialogTitle>
-                      <DialogDescription>
-                        Dialog, alert-dialog, menus, and popovers are included in core.
-                      </DialogDescription>
-                    </DialogHeader>
-                    <DialogFooter>
-                      <Button>Confirm</Button>
-                    </DialogFooter>
-                  </DialogContent>
-                </Dialog>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button variant="outline">Hover me</Button>
-                  </TooltipTrigger>
-                  <TooltipContent>Tooltip content</TooltipContent>
-                </Tooltip>
+              <div className="flex items-center gap-4">
+                <Avatar>
+                  <AvatarFallback>ZC</AvatarFallback>
+                </Avatar>
+                <Separator orientation="vertical" className="h-8" />
+                <div className="flex items-center gap-2 text-ui-sm">
+                  <span className="text-foreground-subtle">Metric</span>
+                  <FlipMetricValue value={String(metric)} />
+                  <Button size="sm" variant="outline" onClick={() => setMetric((n) => n + 37)}>
+                    +37
+                  </Button>
+                </div>
               </div>
+              <Collapsible open={openCollapsible} onOpenChange={setOpenCollapsible}>
+                <CollapsibleTrigger asChild>
+                  <Button variant="ghost" size="sm" className="gap-2">
+                    Collapsible
+                    <ChevronDownIcon
+                      className={`size-4 transition-transform ${openCollapsible ? "rotate-180" : ""}`}
+                    />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="text-ui-sm text-foreground-subtle">
+                  Extra details live here when expanded.
+                </CollapsibleContent>
+              </Collapsible>
             </CardContent>
           </Card>
 
@@ -223,16 +426,113 @@ export default function App() {
 
           <Card>
             <CardHeader>
-              <CardTitle>Avatar & separator</CardTitle>
+              <CardTitle>Scroll & resizable</CardTitle>
             </CardHeader>
-            <CardContent className="flex items-center gap-4">
-              <Avatar>
-                <AvatarFallback>ZC</AvatarFallback>
-              </Avatar>
-              <Separator orientation="vertical" className="h-8" />
-              <span className="text-ui-sm text-foreground-subtle">
-                Theme: <code className="text-foreground">{theme}</code>
-              </span>
+            <CardContent className="grid gap-4 md:grid-cols-2">
+              <ScrollArea className="h-36 rounded-md border border-border p-3">
+                <div className="space-y-2 text-ui-sm text-foreground-subtle">
+                  {Array.from({ length: 12 }, (_, i) => (
+                    <p key={i}>Scrollable row {i + 1}</p>
+                  ))}
+                </div>
+              </ScrollArea>
+              <ResizablePanelGroup
+                layoutId="zcode-ui-kit-demo-split"
+                orientation="horizontal"
+                panelIds={["demo-a", "demo-b"]}
+                className="min-h-36 rounded-md border border-border"
+              >
+                <ResizablePanel id="demo-a" defaultSize="55" minSize="20%">
+                  <div className="flex h-full items-center justify-center text-ui-sm">A</div>
+                </ResizablePanel>
+                <ResizableHandle />
+                <ResizablePanel id="demo-b" defaultSize="45" minSize="20%">
+                  <div className="flex h-full items-center justify-center text-ui-sm">B</div>
+                </ResizablePanel>
+              </ResizablePanelGroup>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Command, context menu & scroll fade</CardTitle>
+            </CardHeader>
+            <CardContent className="grid gap-4 md:grid-cols-2">
+              <Command className="rounded-md border border-border">
+                <CommandInput placeholder="Type a command…" />
+                <CommandList>
+                  <CommandEmpty>No results.</CommandEmpty>
+                  <CommandGroup heading="Suggestions">
+                    <CommandItem>Calendar</CommandItem>
+                    <CommandItem>Search emoji</CommandItem>
+                    <CommandItem>Settings</CommandItem>
+                  </CommandGroup>
+                </CommandList>
+              </Command>
+              <div className="flex flex-col gap-3">
+                <ContextMenu>
+                  <ContextMenuTrigger className="flex h-24 items-center justify-center rounded-md border border-dashed border-border text-ui-sm text-foreground-subtle">
+                    Right-click here
+                  </ContextMenuTrigger>
+                  <ContextMenuContent>
+                    <ContextMenuItem>Profile</ContextMenuItem>
+                    <ContextMenuItem>Billing</ContextMenuItem>
+                    <ContextMenuItem>Team</ContextMenuItem>
+                  </ContextMenuContent>
+                </ContextMenu>
+                <ScrollFadeViewport className="h-24 rounded-md border border-border">
+                  <div className="space-y-2 p-3 text-ui-sm text-foreground-subtle">
+                    {Array.from({ length: 10 }, (_, i) => (
+                      <p key={i}>Fade edge row {i + 1}</p>
+                    ))}
+                  </div>
+                </ScrollFadeViewport>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Chart</CardTitle>
+              <CardDescription>Requires optional peer <code>recharts</code></CardDescription>
+            </CardHeader>
+            <CardContent>
+              <ChartContainer config={chartConfig} className="aspect-[2/1] w-full">
+                <BarChart accessibilityLayer data={chartData}>
+                  <CartesianGrid vertical={false} />
+                  <XAxis dataKey="month" tickLine={false} axisLine={false} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+                  <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+                </BarChart>
+              </ChartContainer>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>AI-elements (lightweight)</CardTitle>
+              <CardDescription>
+                Shimmer / suggestion / snippet — optional peer <code>motion</code> for shimmer
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col gap-4">
+              <Shimmer className="text-ui-lg font-medium">Generating response…</Shimmer>
+              <Suggestions>
+                {suggestions.map((s) => (
+                  <Suggestion
+                    key={s}
+                    suggestion={s}
+                    onClick={(value) => toast(`Suggestion: ${value}`, { variant: "info" })}
+                  />
+                ))}
+              </Suggestions>
+              <Snippet code="pnpm add @zcode-ui/core">
+                <SnippetInput />
+                <SnippetAddon align="inline-end">
+                  <SnippetCopyButton />
+                </SnippetAddon>
+              </Snippet>
             </CardContent>
           </Card>
         </main>

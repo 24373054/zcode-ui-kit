@@ -1,6 +1,6 @@
 {
   "name": "zcode-ui-kit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "Apache-2.0",
   "type": "module",
@@ -10,9 +10,12 @@
   },
   "scripts": {
     "dev": "pnpm --filter @zcode-ui/demo run dev",
+    "build": "pnpm -r --filter @zcode-ui/tokens --filter @zcode-ui/theme --filter @zcode-ui/core run build",
+    "build:packages": "pnpm run build",
     "build:demo": "pnpm --filter @zcode-ui/demo run build",
-    "typecheck": "pnpm --filter @zcode-ui/demo run typecheck",
-    "extract": "node ./scripts/extract.mjs"
+    "typecheck": "pnpm -r --filter @zcode-ui/theme --filter @zcode-ui/core --filter @zcode-ui/demo run typecheck",
+    "extract": "node ./scripts/extract.mjs",
+    "clean": "pnpm -r --filter @zcode-ui/theme --filter @zcode-ui/core run clean && rm -rf apps/demo/dist"
   },
   "pnpm": {
     "overrides": {

@@ -1,10 +1,12 @@
 {
   "name": "@zcode-ui/tokens",
   "description": "ZCode UI design tokens: @theme scale, .dark / .theme-zai-light / .theme-zai-dark palettes",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "Apache-2.0",
   "type": "module",
-  "files": ["src"],
+  "files": [
+    "src"
+  ],
   "exports": {
     ".": "./src/index.ts",
     "./styles.css": "./src/styles.css",
@@ -14,6 +16,12 @@
     "tailwindcss": "^4.0.0"
   },
   "peerDependenciesMeta": {
-    "tailwindcss": { "optional": true }
+    "tailwindcss": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "node -e \"console.log('@zcode-ui/tokens: CSS-only, nothing to compile')\"",
+    "typecheck": "node -e \"console.log('@zcode-ui/tokens: CSS-only, skip typecheck')\""
   }
 }

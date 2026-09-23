@@ -32,9 +32,19 @@
     "spinner (i18n removed)",
     "toast",
     "resizable",
-    "scroll-fade-viewport"
+    "scroll-fade-viewport",
+    "chart",
+    "flip-metric-value",
+    "shimmer (from ai-elements)",
+    "suggestion (from ai-elements)",
+    "snippet (from ai-elements)"
   ],
-  "skipped": [],
+  "skipped": [
+    "GlmMonochromeIcon / ZCodeAboutLogo (brand assets — not redistributed)",
+    "code-viewer / diff-viewer / lightweight-diff* (shiki + @pierre/diffs + store/i18n coupling)",
+    "pdf-viewer / pptx-* / usePdfZoomOverlay (pdfjs + presentation + platform coupling)",
+    "most ai-elements (agent/message/prompt-input/etc. — heavy coupling or optional peers like rive/ai)"
+  ],
   "styles_blocks": {
     "@theme": "137-306",
     ".dark": "308-459",

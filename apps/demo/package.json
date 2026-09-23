@@ -1,6 +1,6 @@
 {
   "name": "@zcode-ui/demo",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,7 +15,9 @@
     "@zcode-ui/tokens": "workspace:*",
     "lucide-react": "^0.511.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "motion": "^12.38.0",
+    "recharts": "^3.8.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.2",

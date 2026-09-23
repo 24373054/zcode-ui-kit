@@ -1,48 +1,220 @@
 {
   "name": "@zcode-ui/core",
   "description": "Standalone shadcn-style React components extracted from ZCode packages/ui",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "Apache-2.0",
   "type": "module",
+  "sideEffects": false,
   "files": [
+    "dist",
     "src"
   ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./src/index.ts",
-    "./utils": "./src/lib/utils.ts",
-    "./button": "./src/components/button.tsx",
-    "./input": "./src/components/input.tsx",
-    "./textarea": "./src/components/textarea.tsx",
-    "./select": "./src/components/select.tsx",
-    "./dialog": "./src/components/dialog.tsx",
-    "./alert-dialog": "./src/components/alert-dialog.tsx",
-    "./dropdown-menu": "./src/components/dropdown-menu.tsx",
-    "./context-menu": "./src/components/context-menu.tsx",
-    "./popover": "./src/components/popover.tsx",
-    "./tooltip": "./src/components/tooltip.tsx",
-    "./hover-card": "./src/components/hover-card.tsx",
-    "./tabs": "./src/components/tabs.tsx",
-    "./accordion": "./src/components/accordion.tsx",
-    "./collapsible": "./src/components/collapsible.tsx",
-    "./checkbox": "./src/components/checkbox.tsx",
-    "./switch": "./src/components/switch.tsx",
-    "./badge": "./src/components/badge.tsx",
-    "./avatar": "./src/components/avatar.tsx",
-    "./card": "./src/components/card.tsx",
-    "./alert": "./src/components/alert.tsx",
-    "./separator": "./src/components/separator.tsx",
-    "./progress": "./src/components/progress.tsx",
-    "./scroll-area": "./src/components/scroll-area.tsx",
-    "./command": "./src/components/command.tsx",
-    "./button-group": "./src/components/button-group.tsx",
-    "./input-group": "./src/components/input-group.tsx",
-    "./label": "./src/components/label.tsx",
-    "./kbd": "./src/components/kbd.tsx",
-    "./spinner": "./src/components/spinner.tsx",
-    "./toast": "./src/components/toast.tsx",
-    "./resizable": "./src/components/resizable.tsx",
-    "./scroll-fade-viewport": "./src/components/scroll-fade-viewport.tsx",
-    "./package.json": "./package.json"
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./utils": {
+      "types": "./dist/lib/utils.d.ts",
+      "import": "./dist/lib/utils.js",
+      "default": "./dist/lib/utils.js"
+    },
+    "./package.json": "./package.json",
+    "./src/*": "./src/*",
+    "./accordion": {
+      "types": "./dist/components/accordion.d.ts",
+      "import": "./dist/components/accordion.js",
+      "default": "./dist/components/accordion.js"
+    },
+    "./alert": {
+      "types": "./dist/components/alert.d.ts",
+      "import": "./dist/components/alert.js",
+      "default": "./dist/components/alert.js"
+    },
+    "./alert-dialog": {
+      "types": "./dist/components/alert-dialog.d.ts",
+      "import": "./dist/components/alert-dialog.js",
+      "default": "./dist/components/alert-dialog.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/avatar.d.ts",
+      "import": "./dist/components/avatar.js",
+      "default": "./dist/components/avatar.js"
+    },
+    "./badge": {
+      "types": "./dist/components/badge.d.ts",
+      "import": "./dist/components/badge.js",
+      "default": "./dist/components/badge.js"
+    },
+    "./button": {
+      "types": "./dist/components/button.d.ts",
+      "import": "./dist/components/button.js",
+      "default": "./dist/components/button.js"
+    },
+    "./button-group": {
+      "types": "./dist/components/button-group.d.ts",
+      "import": "./dist/components/button-group.js",
+      "default": "./dist/components/button-group.js"
+    },
+    "./card": {
+      "types": "./dist/components/card.d.ts",
+      "import": "./dist/components/card.js",
+      "default": "./dist/components/card.js"
+    },
+    "./chart": {
+      "types": "./dist/components/chart.d.ts",
+      "import": "./dist/components/chart.js",
+      "default": "./dist/components/chart.js"
+    },
+    "./checkbox": {
+      "types": "./dist/components/checkbox.d.ts",
+      "import": "./dist/components/checkbox.js",
+      "default": "./dist/components/checkbox.js"
+    },
+    "./collapsible": {
+      "types": "./dist/components/collapsible.d.ts",
+      "import": "./dist/components/collapsible.js",
+      "default": "./dist/components/collapsible.js"
+    },
+    "./command": {
+      "types": "./dist/components/command.d.ts",
+      "import": "./dist/components/command.js",
+      "default": "./dist/components/command.js"
+    },
+    "./context-menu": {
+      "types": "./dist/components/context-menu.d.ts",
+      "import": "./dist/components/context-menu.js",
+      "default": "./dist/components/context-menu.js"
+    },
+    "./dialog": {
+      "types": "./dist/components/dialog.d.ts",
+      "import": "./dist/components/dialog.js",
+      "default": "./dist/components/dialog.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/components/dropdown-menu.d.ts",
+      "import": "./dist/components/dropdown-menu.js",
+      "default": "./dist/components/dropdown-menu.js"
+    },
+    "./flip-metric-value": {
+      "types": "./dist/components/flip-metric-value.d.ts",
+      "import": "./dist/components/flip-metric-value.js",
+      "default": "./dist/components/flip-metric-value.js"
+    },
+    "./hover-card": {
+      "types": "./dist/components/hover-card.d.ts",
+      "import": "./dist/components/hover-card.js",
+      "default": "./dist/components/hover-card.js"
+    },
+    "./input": {
+      "types": "./dist/components/input.d.ts",
+      "import": "./dist/components/input.js",
+      "default": "./dist/components/input.js"
+    },
+    "./input-group": {
+      "types": "./dist/components/input-group.d.ts",
+      "import": "./dist/components/input-group.js",
+      "default": "./dist/components/input-group.js"
+    },
+    "./kbd": {
+      "types": "./dist/components/kbd.d.ts",
+      "import": "./dist/components/kbd.js",
+      "default": "./dist/components/kbd.js"
+    },
+    "./label": {
+      "types": "./dist/components/label.d.ts",
+      "import": "./dist/components/label.js",
+      "default": "./dist/components/label.js"
+    },
+    "./popover": {
+      "types": "./dist/components/popover.d.ts",
+      "import": "./dist/components/popover.js",
+      "default": "./dist/components/popover.js"
+    },
+    "./progress": {
+      "types": "./dist/components/progress.d.ts",
+      "import": "./dist/components/progress.js",
+      "default": "./dist/components/progress.js"
+    },
+    "./resizable": {
+      "types": "./dist/components/resizable.d.ts",
+      "import": "./dist/components/resizable.js",
+      "default": "./dist/components/resizable.js"
+    },
+    "./scroll-area": {
+      "types": "./dist/components/scroll-area.d.ts",
+      "import": "./dist/components/scroll-area.js",
+      "default": "./dist/components/scroll-area.js"
+    },
+    "./scroll-fade-viewport": {
+      "types": "./dist/components/scroll-fade-viewport.d.ts",
+      "import": "./dist/components/scroll-fade-viewport.js",
+      "default": "./dist/components/scroll-fade-viewport.js"
+    },
+    "./select": {
+      "types": "./dist/components/select.d.ts",
+      "import": "./dist/components/select.js",
+      "default": "./dist/components/select.js"
+    },
+    "./separator": {
+      "types": "./dist/components/separator.d.ts",
+      "import": "./dist/components/separator.js",
+      "default": "./dist/components/separator.js"
+    },
+    "./shimmer": {
+      "types": "./dist/components/shimmer.d.ts",
+      "import": "./dist/components/shimmer.js",
+      "default": "./dist/components/shimmer.js"
+    },
+    "./snippet": {
+      "types": "./dist/components/snippet.d.ts",
+      "import": "./dist/components/snippet.js",
+      "default": "./dist/components/snippet.js"
+    },
+    "./spinner": {
+      "types": "./dist/components/spinner.d.ts",
+      "import": "./dist/components/spinner.js",
+      "default": "./dist/components/spinner.js"
+    },
+    "./suggestion": {
+      "types": "./dist/components/suggestion.d.ts",
+      "import": "./dist/components/suggestion.js",
+      "default": "./dist/components/suggestion.js"
+    },
+    "./switch": {
+      "types": "./dist/components/switch.d.ts",
+      "import": "./dist/components/switch.js",
+      "default": "./dist/components/switch.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/tabs.d.ts",
+      "import": "./dist/components/tabs.js",
+      "default": "./dist/components/tabs.js"
+    },
+    "./textarea": {
+      "types": "./dist/components/textarea.d.ts",
+      "import": "./dist/components/textarea.js",
+      "default": "./dist/components/textarea.js"
+    },
+    "./toast": {
+      "types": "./dist/components/toast.d.ts",
+      "import": "./dist/components/toast.js",
+      "default": "./dist/components/toast.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/tooltip.d.ts",
+      "import": "./dist/components/tooltip.js",
+      "default": "./dist/components/tooltip.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -55,11 +227,24 @@
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "recharts": "^3.0.0",
+    "motion": "^12.0.0"
+  },
+  "peerDependenciesMeta": {
+    "recharts": {
+      "optional": true
+    },
+    "motion": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "motion": "^12.38.0",
+    "recharts": "^3.8.0",
+    "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   }
 }

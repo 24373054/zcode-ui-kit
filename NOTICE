@@ -13,6 +13,11 @@ This kit includes only the standalone design tokens, theme runtime, and selected
 shadcn-style React components from packages/ui. It does NOT include the ZCode
 application shell, agent runtime, login, git, terminal, or brand logo assets.
 
+Selected lightweight files under components/ (shimmer, suggestion, snippet) are
+derived from vercel/ai-elements (Apache-2.0), as adapted in ZCode packages/ui.
+See file header comments for provenance.
+
 Third-party runtime dependencies (radix-ui, lucide-react, cmdk, class-variance-authority,
-clsx, tailwind-merge, react-resizable-panels, Tailwind CSS, shadcn CSS helpers, etc.)
-retain their own licenses; see each package's NOTICE / license files when redistributing.
+clsx, tailwind-merge, react-resizable-panels, recharts, motion, Tailwind CSS,
+shadcn CSS helpers, etc.) retain their own licenses; see each package's NOTICE /
+license files when redistributing.

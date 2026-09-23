@@ -23,12 +23,16 @@ pnpm add @zcode-ui/tokens@workspace:* @zcode-ui/theme@workspace:* @zcode-ui/core
 }
 ```
 
+After install, run `pnpm --filter @zcode-ui/theme build && pnpm --filter @zcode-ui/core build` (or root `pnpm build`) so `dist/` exists if you consume package exports.
+
 ## 2. Host dependencies
 
 ```sh
 pnpm add react react-dom
 pnpm add -D tailwindcss @tailwindcss/vite tw-animate-css tailwind-scrollbar-hide shadcn
 # core already depends on: radix-ui, lucide-react, class-variance-authority, clsx, tailwind-merge, cmdk, react-resizable-panels
+# optional (only if you use these components):
+pnpm add recharts motion
 ```
 
 Vite:
@@ -48,6 +52,8 @@ export default defineConfig({ plugins: [react(), tailwindcss()] });
 @import "shadcn/tailwind.css"; /* required for Radix data-* custom variants */
 @import "@zcode-ui/tokens/styles.css";
 
+@source "../node_modules/@zcode-ui/core/dist/**/*.{js,jsx}";
+/* or, if consuming TypeScript source: */
 @source "../node_modules/@zcode-ui/core/src/**/*.{ts,tsx}";
 @source "./src/**/*.{ts,tsx}";
 ```
@@ -79,19 +85,21 @@ Theme classes applied on `<html>`: `.dark`, `.theme-zai-light`, `.theme-zai-dark
 import { Button } from "@zcode-ui/core/button";
 import { cn } from "@zcode-ui/core/utils";
 // or barrel:
-import { Button, Input, Dialog } from "@zcode-ui/core";
+import { Button, Input, Dialog, ChartContainer } from "@zcode-ui/core";
 ```
 
 ## 6. Verify
 
 - [ ] Light (`zai-light`) and dark (`zai-dark`) both look correct
 - [ ] Select / Dropdown / Dialog portal layers use popover colors
-- [ ] Vite resolves `.js` imports inside `@zcode-ui/core` source to `.tsx`
+- [ ] `dist` types resolve (`@zcode-ui/core` → `dist/index.d.ts`) **or** Vite resolves `.js` imports inside source to `.tsx`
 - [ ] No `@zcode/*` imports remain in your bundle from this kit
+- [ ] Optional peers installed if you use Chart (`recharts`) or Shimmer / FlipMetricValue (`motion`)
 
 ## Known limits
 
-- Source-first packaging: hosts need a TS/JSX-capable bundler (Vite recommended).
+- Tokens are CSS-only; theme + core publish compiled `dist` (ESM + types) while keeping `src` for source-first hosts.
 - Electron vibrancy / xterm / katex CSS were intentionally stripped from tokens.
 - Spinner i18n was replaced with a `label` prop (default `"Loading"`).
-- Does not include chart, code-viewer, pdf/pptx viewers, or brand logos.
+- Does not include pdf/pptx viewers, code/diff viewers, brand logos, or heavily coupled ai-elements (message, prompt-input, persona/rive, etc.).
+- `shimmer` / `suggestion` / `snippet` retain Apache-2.0 attribution headers from vercel/ai-elements (via ZCode).
